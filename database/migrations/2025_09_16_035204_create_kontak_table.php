@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('kontak', function (Blueprint $table) {
+        Schema::create('contact', function (Blueprint $table) {
             $table->id();
             $table->string('whatsapp')->nullable();   // Nomor WhatsApp
             $table->string('email')->nullable();      // Email
-            $table->text('alamat')->nullable();       // Alamat
-            $table->string('jam_kerja')->nullable();  // Jam kerja
+            $table->text('address')->nullable();       // address
+            $table->string('working_hours')->nullable();  // Jam kerja
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('kontak');
+        Schema::dropIfExists('contact');
     }
 };

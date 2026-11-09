@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        View::share('indexData', Index::first());
-        View::share('layananData', ServicesPage::all());
+        //View::share('indexData', Index::first());
+        //View::share('serviceData', ServicesPage::all());
     }
 }

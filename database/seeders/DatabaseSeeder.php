@@ -16,13 +16,22 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(IndexesTableSeeder::class);
         $this->call([
-            LayananSeeder::class,
+            ServiceSeeder::class,
         ]);
         $this->call([
-            TentangSeeder::class,
+            AboutSeeder::class,
         ]);
         $this->call([
-            KontakSeeder::class,
+            ContactSeeder::class,
+        ]);
+        $this->call([
+            ProductsPageSeeder::class,
+        ]);
+        $this->call([
+            NewsPageSeeder::class,
+        ]);
+        $this->call([
+            MediaPageSeeder::class,
         ]);
     }
 }

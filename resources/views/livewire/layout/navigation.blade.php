@@ -34,19 +34,31 @@ new class extends Component {
                     </x-nav-link>
 
                     <x-nav-link :href="route('index-edit')" :active="request()->routeIs('index-edit')" wire:navigate>
-                        {{ __('Beranda') }}
+                        {{ __('Home') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('tentang.edit')" :active="request()->routeIs('tentang.edit')" wire:navigate>
-                        {{ __('Tentang') }}
+                    <x-nav-link :href="route('about.edit')" :active="request()->routeIs('about.edit')" wire:navigate>
+                        {{ __('About') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('layanan.edit')" :active="request()->routeIs('layanan.edit')" wire:navigate>
-                        {{ __('Layanan') }}
+                    <x-nav-link :href="route('service.edit')" :active="request()->routeIs('service.edit')" wire:navigate>
+                        {{ __('Services') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('kontak.edit')" :active="request()->routeIs('kontak.edit')" wire:navigate>
-                        {{ __('Kontak') }}
+                    <x-nav-link :href="route('products.edit')" :active="request()->routeIs('products.edit')" wire:navigate>
+                        {{ __('Products') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('news.edit')" :active="request()->routeIs('news.edit')" wire:navigate>
+                        {{ __('News') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('media.edit')" :active="request()->routeIs('media.edit')" wire:navigate>
+                        {{ __('Media') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('contact.edit')" :active="request()->routeIs('contact.edit')" wire:navigate>
+                        {{ __('Contact') }}
                     </x-nav-link>
                 </div>
             </div>

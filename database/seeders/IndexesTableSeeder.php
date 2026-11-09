@@ -13,79 +13,167 @@ class IndexesTableSeeder extends Seeder
     public function run(): void
     {
         DB::table('indexes')->insert([
-            // Main Section
-            'main_h1' => 'Selamat Datang di Website Kami',
-            'main_h2' => 'Solusi Digital untuk Bisnis Anda',
-            'main_p' => 'Kami menyediakan layanan terbaik untuk membantu bisnis Anda berkembang.',
-            'main_button_text' => 'Pelajari Lebih Lanjut',
+
+            // Үндсэн хэсэг
+            'main_h1' => 'Нарийн боов',
+            'main_h2' => 'Таны бизнест зориулсан дижитал шийдэл',
+            'main_p' => 'Бид таны бизнесийг хөгжүүлэхэд туслах шилдэг үйлчилгээ, шийдлүүдийг санал болгодог.',
+            'main_button_text' => 'Дэлгэрэнгүй үзэх',
             'main_button_link' => '/about',
 
-            // Section 2 (3 card)
-            'sec2_h2' => 'Layanan Unggulan',
-            'sec2_p' => 'Berbagai layanan yang kami tawarkan untuk memenuhi kebutuhan Anda.',
+
+            // Section 2 (3 карт)
+            'sec2_h2' => 'Онцлох үйлчилгээ',
+            'sec2_p' => 'Таны хэрэгцээнд тохирсон олон төрлийн үйлчилгээ.',
             'sec2_cards' => json_encode([
-                ['title' => 'Desain Web', 'description' => 'Desain modern dan responsif.'],
-                ['title' => 'Pengembangan Aplikasi', 'description' => 'Aplikasi yang cepat dan aman.'],
-                ['title' => 'SEO & Marketing', 'description' => 'Optimasi website agar mudah ditemukan.']
+                [
+                    'title' => 'Веб дизайн',
+                    'description' => 'Орчин үеийн, бүх төхөөрөмжид тохирох веб дизайн.'
+                ],
+                [
+                    'title' => 'Аппликэйшн хөгжүүлэлт',
+                    'description' => 'Хурдан, найдвартай, аюулгүй аппликэйшн хөгжүүлэлт.'
+                ],
+                [
+                    'title' => 'SEO ба маркетинг',
+                    'description' => 'Вебсайтыг хайлтын системд илүү харагдахуйц болгох.'
+                ]
             ]),
 
+
             // Section 3
-            'sec3_h2' => 'Bekerja Bersama Kami',
-            'sec3_p' => 'Kami percaya kolaborasi membawa hasil terbaik.',
-            'sec3_button_text' => 'Hubungi Kami',
+            'sec3_h2' => 'Бидэнтэй хамтран ажиллаарай',
+            'sec3_p' => 'Хамтын ажиллагаа хамгийн сайн үр дүнг авчирна гэдэгт бид итгэдэг.',
+            'sec3_button_text' => 'Холбогдох',
             'sec3_button_link' => '/contact',
             'sec3_video_link' => '',
 
-            // Section 4 (4 card)
-            'sec4_h2' => 'Portofolio Kami',
-            'sec4_p' => 'Beberapa proyek yang telah kami selesaikan.',
-            'sec4_button_text' => 'Lihat Semua Proyek',
-            'sec4_button_link' => '/portfolio',
+
+            // Section 4 (4 карт)
+            'sec4_h2' => 'Бидний бүтээлүүд',
+            'sec4_p' => 'Бидний амжилттай хэрэгжүүлсэн төслүүдээс.',
+            'sec4_button_text' => 'Бүх төслийг үзэх',
+            'sec4_button_link' => '/products',
+
             'sec4_cards' => json_encode([
-                ['title' => 'Proyek A', 'image' => '/images/project-a.jpg'],
-                ['title' => 'Proyek B', 'image' => '/images/project-b.jpg'],
-                ['title' => 'Proyek C', 'image' => '/images/project-c.jpg'],
-                ['title' => 'Proyek D', 'image' => '/images/project-d.jpg'],
+                [
+                    'title' => 'Төсөл A',
+                    'image' => '/images/project-a.jpg'
+                ],
+                [
+                    'title' => 'Төсөл B',
+                    'image' => '/images/project-b.jpg'
+                ],
+                [
+                    'title' => 'Төсөл C',
+                    'image' => '/images/project-c.jpg'
+                ],
+                [
+                    'title' => 'Төсөл D',
+                    'image' => '/images/project-d.jpg'
+                ],
             ]),
 
-            // Section 5 (4 card berisi h2 dan p)
+
+            // Section 5 (4 карт статистик)
             'sec5_cards' => json_encode([
-                ['h2' => 'Kecepatan', 'p' => 'Proses kerja yang efisien dan cepat.', 'count' => 100],
-                ['h2' => 'Kualitas', 'p' => 'Hasil pekerjaan berkualitas tinggi.', 'count' => 110],
-                ['h2' => 'Inovasi', 'p' => 'Selalu mengikuti perkembangan teknologi.', 'count' => 100],
-                ['h2' => 'Dukungan', 'p' => 'Layanan support 24/7.', 'count' => 120]
+                [
+                    'h2' => 'Хурд',
+                    'p' => 'Ажлын процессыг хурдан, үр ашигтай гүйцэтгэнэ.',
+                    'count' => 100
+                ],
+                [
+                    'h2' => 'Чанар',
+                    'p' => 'Өндөр чанартай, найдвартай үр дүн.',
+                    'count' => 110
+                ],
+                [
+                    'h2' => 'Инноваци',
+                    'p' => 'Шинэ технологи, орчин үеийн шийдлүүдийг ашиглана.',
+                    'count' => 100
+                ],
+                [
+                    'h2' => 'Дэмжлэг',
+                    'p' => '24/7 хэрэглэгчийн тусламж үйлчилгээ.',
+                    'count' => 120
+                ]
             ]),
 
-            // Section 6 (4 card img, h3, p)
-            'sec6_h2' => 'Tim Kami',
-            'sec6_p' => 'Berpengalaman dan berdedikasi.',
+
+            // Section 6 (Багийн танилцуулга)
+            'sec6_h2' => 'Манай баг',
+            'sec6_p' => 'Туршлагатай, хариуцлагатай мэргэжилтнүүдээс бүрдсэн баг.',
+
             'sec6_cards' => json_encode([
-                ['img' => '/images/team1.jpg', 'h3' => 'John Doe', 'p' => 'CEO & Founder'],
-                ['img' => '/images/team2.jpg', 'h3' => 'Jane Smith', 'p' => 'CTO'],
-                ['img' => '/images/team3.jpg', 'h3' => 'Michael Lee', 'p' => 'Lead Designer'],
-                ['img' => '/images/team4.jpg', 'h3' => 'Sarah Johnson', 'p' => 'Marketing Manager'],
+                [
+                    'img' => '/images/team1.jpg',
+                    'h3' => 'Бат',
+                    'p' => 'Гүйцэтгэх захирал'
+                ],
+                [
+                    'img' => '/images/team2.jpg',
+                    'h3' => 'Сараа',
+                    'p' => 'Технологийн захирал'
+                ],
+                [
+                    'img' => '/images/team3.jpg',
+                    'h3' => 'Мөнх',
+                    'p' => 'Ахлах дизайнер'
+                ],
+                [
+                    'img' => '/images/team4.jpg',
+                    'h3' => 'Номин',
+                    'p' => 'Маркетингийн менежер'
+                ],
             ]),
+
 
             // Section 7
-            'sec7_h2' => 'Testimoni Klien',
-            'sec7_p' => 'Apa kata mereka tentang kami.',
-            'sec7_button_text' => 'Lihat Semua Testimoni',
+            'sec7_h2' => 'Харилцагчдын сэтгэгдэл',
+            'sec7_p' => 'Манай үйлчилгэний талаар хэрэглэгчид юу хэлдэг вэ.',
+            'sec7_button_text' => 'Бүх сэтгэгдлийг үзэх',
+
             'sec7_cards' => json_encode([
-                ['name' => 'Andi', 'feedback' => 'Pelayanan cepat dan profesional.', 'profile' => '/images/team1.jpg'],
-                ['name' => 'Budi', 'feedback' => 'Hasil desain sangat memuaskan.', 'profile' => '/images/team1.jpg'],
-                ['name' => 'Citra', 'feedback' => 'Tim yang ramah dan membantu.', 'profile' => '/images/team1.jpg']
+                [
+                    'name' => 'Бат',
+                    'feedback' => 'Үйлчилгээ хурдан, мэргэжлийн түвшинд байсан.',
+                    'profile' => '/images/team1.jpg'
+                ],
+                [
+                    'name' => 'Болд',
+                    'feedback' => 'Дизайны үр дүн маш их таалагдсан.',
+                    'profile' => '/images/team1.jpg'
+                ],
+                [
+                    'name' => 'Цэцэг',
+                    'feedback' => 'Найрсаг, тусалж дэмждэг баг.',
+                    'profile' => '/images/team1.jpg'
+                ]
             ]),
 
-            // Section 8 (3 card)
-            'sec8_h2' => 'Artikel Terbaru',
+
+            // Section 8 — Hero overlay cards (Vision / Mission / Values)
+            'sec8_h2' => null,
+
             'sec8_cards' => json_encode([
-                ['title' => 'Tips Meningkatkan Bisnis Online', 'link' => '/blog/tips-bisnis-online'],
-                ['title' => 'Tren Desain Web 2025', 'link' => '/blog/tren-desain-web-2025'],
-                ['title' => 'Pentingnya SEO di Era Digital', 'link' => '/blog/seo-era-digital']
+                [
+                    'title' => 'Алсын хараа',
+                    'description' => 'Үндэсний брэндийг дэлхийд танилцуулна.',
+                ],
+                [
+                    'title' => 'Эрхэм зорилго',
+                    'description' => 'Өвөг дээдсээс уламжлагдан ирсэн үнэт өвөг дээдсийн жор, эв найрамдалтай орчинд соёл, түгээмэл, эрдэм хийгээд боловсролтой хамтын байгууллага байх.',
+                ],
+                [
+                    'title' => 'Үнэт зүйлс',
+                    'description' => 'Соёлын өвийг дээдэлж, смарт үйлдвэрлэл, тогтвортой хөгжил.',
+                ],
             ]),
+
 
             'created_at' => now(),
             'updated_at' => now(),
+
         ]);
     }
 }

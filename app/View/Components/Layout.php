@@ -14,7 +14,7 @@ class Layout extends Component
     public $title;
     public $activePage;
 
-    public function __construct($title = "Halaman Default", $activePage = null)
+    public function __construct($title = "Default Page", $activePage = null)
     {
         $this->title = $title;
         $this->activePage = $activePage;

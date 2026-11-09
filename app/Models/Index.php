@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,6 +20,7 @@ class Index extends Model
         'main_p',
         'main_button_text',
         'main_button_link',
+        'main_video',
         'sec2_h2',
         'sec2_p',
         'sec2_cards',
@@ -52,4 +54,26 @@ class Index extends Model
         'sec7_cards' => 'array',
         'sec8_cards' => 'array',
     ];
+
+    /**
+     * Resolve a stored image/video path into a browser-usable URL.
+     * Supports full URLs, files uploaded to the public storage disk,
+     * and plain filenames seeded under public/images.
+     */
+    public static function resolveMedia(?string $path): ?string
+    {
+        if (empty($path)) {
+            return null;
+        }
+
+        if (str_starts_with($path, 'http://') || str_starts_with($path, 'https://')) {
+            return $path;
+        }
+
+        if (Storage::disk('public')->exists($path)) {
+            return asset('storage/' . $path);
+        }
+
+        return asset('images/' . ltrim($path, '/'));
+    }
 }

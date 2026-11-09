@@ -1,16 +1,24 @@
 <!doctype html>
-<html lang="id">
+<html lang="mn">
+@props([
+    'title' => '',
+    'activePage' => '',
+    'indexData' => null,
+])
 
-    <x-head :title="$title"></x-head>
+<x-head :title="$title"></x-head>
 
-    <body>
-        <x-nav-bar :activePage="$activePage" :indexData="$indexData"></x-nav-bar>
+<body class="bg-white">
+    <x-nav-bar 
+        :activePage="$activePage" 
+        :indexData="$indexData">
+    </x-nav-bar>
 
-        @yield('page')
+    @yield('page')
 
-        <x-end-body></x-end-body>
+    <x-end-body></x-end-body>
 
-        <x-footer :activePage="$activePage"></x-footer>
-    </body>
+    <x-footer :activePage="$activePage"></x-footer>
+</body>
 
 </html>

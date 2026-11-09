@@ -33,6 +33,18 @@
 
             <!-- Page Content -->
             <main>
+                @if ($errors->any())
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+                        <div class="p-4 bg-red-100 text-red-700 border border-red-300 rounded-lg">
+                            <p class="font-semibold mb-1">⚠️ Хадгалахад алдаа гарлаа:</p>
+                            <ul class="list-disc list-inside text-sm space-y-0.5">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                @endif
                 {{ $slot }}
             </main>
         </div>
@@ -48,14 +60,16 @@
                         // Jika ada data lama/DB, pakai itu, kalau kosong, mulai 1 card kosong (opsional)
                         this.cards = Array.isArray(initial) && initial.length ? initial : [];
                     },
-                    add() {
-                        this.cards.push({
-                            title: '',
-                            description: ''
-                        });
+                    add(newCard) {
+                        this.cards.push(newCard ?? { title: '', description: '' });
                     },
                     remove(i) {
                         this.cards.splice(i, 1);
+                    },
+                    resolveMedia(path) {
+                        if (!path) return '';
+                        if (path.startsWith('http')) return path;
+                        return path.includes('/') ? `/storage/${path}` : `/images/${path}`;
                     }
                 }
             }
